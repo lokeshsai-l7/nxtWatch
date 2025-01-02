@@ -84,7 +84,7 @@ class Trending extends Component {
       case apiConstants.success:
         return this.renderTrendingVideos()
       case apiConstants.inProgress:
-        return <Loading />
+        return <Loading data-testid="loader" />
       case apiConstants.failure:
         return <FailureView onClickRetry={this.tryAgain} />
       default:

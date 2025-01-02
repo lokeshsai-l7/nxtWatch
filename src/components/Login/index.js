@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 import {
   ShwPswLabel,
   ResponsiveContainer,
@@ -13,6 +14,7 @@ import {
   LoginBtn,
   Error,
 } from './styledComponent'
+
 import ThemeContext from '../../context/ThemeContext'
 
 class Login extends Component {
@@ -83,7 +85,7 @@ class Login extends Component {
           <ResponsiveContainer $darkTheme={darkTheme}>
             <LoginCardContainer $darkTheme={darkTheme}>
               <NxtWatchLogo
-                alt="nxtwatch logo"
+                alt="website logo"
                 src={
                   darkTheme
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
@@ -137,6 +139,10 @@ class Login extends Component {
   )
 
   render() {
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
     return this.renderLoginForm()
   }
 }

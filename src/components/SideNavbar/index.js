@@ -53,7 +53,7 @@ const SideNavbar = () => (
             ))}
           </NavList>
           <SocialMediaContainer $darkTheme={darkTheme}>
-            <SideHeading>Contact Us</SideHeading>
+            <SideHeading>CONTACT US</SideHeading>
             <SocialMediaImgContainer>
               <SocialMediaImg
                 alt="facebook logo"

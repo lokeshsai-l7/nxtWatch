@@ -7,13 +7,13 @@ const NotFound = () => (
     {value => {
       const {darkTheme} = value
       const failedViewDetails = {
-        failedAlt: 'not found',
+        failedAlt: 'Not Found Image',
         darkThemeImgUrl:
           'https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-dark-theme-img.png',
         lightThemeImgUrl:
           'https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-light-theme-img.png',
         heading: 'Page Not Found',
-        description: 'We are sorry the page you requested could not be found',
+        description: 'we are sorry, the page you requested could not be found.',
       }
       return (
         <NotFoundContainer $darkTheme={darkTheme}>

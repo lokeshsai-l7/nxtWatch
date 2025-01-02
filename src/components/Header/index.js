@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
+
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {FaMoon} from 'react-icons/fa'
 import {AiFillHome} from 'react-icons/ai'
@@ -7,7 +8,7 @@ import {HiFire} from 'react-icons/hi'
 import {SiYoutubegaming} from 'react-icons/si'
 import {BiListPlus, BiLogOut} from 'react-icons/bi'
 import {IoMdClose, IoIosSunny} from 'react-icons/io'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 import ThemeContext from '../../context/ThemeContext'
 import HeaderBtn from '../HeaderBtn/index'
 
@@ -82,16 +83,23 @@ const Header = props => (
       return (
         <NavBar $darkTheme={darkTheme}>
           <NavContainer>
-            <NxtWatchLogo
-              alt="website logo"
-              src={
-                darkTheme
-                  ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
-                  : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-              }
-            />
+            <Link to="/">
+              <NxtWatchLogo
+                alt="website logo"
+                src={
+                  darkTheme
+                    ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
+                    : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
+                }
+              />
+            </Link>
+
             <NavListContainer>
-              <NavBtn $darkTheme={darkTheme} onClick={onClickThemeBtn}>
+              <NavBtn
+                data-testid="theme"
+                $darkTheme={darkTheme}
+                onClick={onClickThemeBtn}
+              >
                 {darkTheme ? <IoIosSunny /> : <FaMoon />}
               </NavBtn>
 
@@ -157,7 +165,7 @@ const Header = props => (
                   {close => (
                     <Modal $darkTheme={darkTheme}>
                       <Heading $darkTheme={darkTheme}>
-                        Are you sure you want to logout?
+                        Are you sure, you want to logout
                       </Heading>
                       <BtnContainer>
                         <PopupBtn

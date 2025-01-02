@@ -79,9 +79,9 @@ class App extends Component {
               path="/saved-videos"
               component={SavedVideos}
             />
-            <Route exact path="/not-found" component={NotFound} />
-            <Redirect to="not-found" />
+            <Route exact path="/bad-path" component={NotFound} />
           </Layout>
+          <Redirect to="/bad-path" />
         </Switch>
       </ThemeContext.Provider>
     )

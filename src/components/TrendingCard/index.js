@@ -25,9 +25,9 @@ const TrendingCard = props => (
       } = props.videoData
       const date = formatDistanceToNow(new Date(publishedAt))
       return (
-        <Link to={`/videos/${id}`}>
+        <Link key={id} to={`/videos/${id}`}>
           <Card>
-            <ThumbnailImg alt="Thumbnail" src={thumbnailUrl} />
+            <ThumbnailImg alt="video thumbnail" src={thumbnailUrl} />
             <ChannelDetails>
               <Title $darkTheme={darkTheme}>{title}</Title>
               <Details>

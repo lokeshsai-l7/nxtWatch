@@ -157,7 +157,11 @@ class Home extends Component {
                 onChange={this.onChangeInputSearch}
                 onKeyDown={this.onClickEnter}
               />
-              <SearchImgBtn onClick={this.getVideosData} $darkTheme={darkTheme}>
+              <SearchImgBtn
+                data-testid="searchButton"
+                onClick={this.getVideosData}
+                $darkTheme={darkTheme}
+              >
                 <FaSearch />
               </SearchImgBtn>
             </SearchContainer>
@@ -173,15 +177,19 @@ class Home extends Component {
   renderBanner = () => {
     const {closeBanner} = this.state
     return (
-      <BannerContainer $close={closeBanner}>
-        <CloseBtn type="button" onClick={this.onClickCloseBanner}>
+      <BannerContainer data-testid="banner" $close={closeBanner}>
+        <CloseBtn
+          data-testid="close"
+          type="button"
+          onClick={this.onClickCloseBanner}
+        >
           close
         </CloseBtn>
         <WebsiteLogo
-          alt="Website Logo"
+          alt="nxt watch logo"
           src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
         />
-        <PremiumText>Buy Nxt Watch Premium prepaid plans with UPI</PremiumText>
+        <PremiumText>Buy Nxt Watch Premium</PremiumText>
         <GetItNow>GET IT NOW</GetItNow>
       </BannerContainer>
     )
@@ -192,7 +200,7 @@ class Home extends Component {
       {value => {
         const {darkTheme} = value
         return (
-          <DataDisplayContainer $darkTheme={darkTheme}>
+          <DataDisplayContainer data-testid="home" $darkTheme={darkTheme}>
             {this.renderBanner()}
             {this.renderDataContainer()}
           </DataDisplayContainer>

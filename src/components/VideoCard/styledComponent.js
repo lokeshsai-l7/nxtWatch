@@ -29,7 +29,7 @@ export const ChannelDetails = styled.div`
   padding: 0px 10px 0px 10px;
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
   margin: 0px;
   color: ${props => (props.$darkTheme ? '#f9f9f9' : '#475569')};
   font-family: 'Roboto';

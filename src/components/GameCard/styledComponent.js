@@ -15,7 +15,7 @@ export const ThumbnailImg = styled.img`
   border-radius: 10px;
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
   color: ${props => (props.$darkTheme ? '#f9f9f9' : '#1e293b')};
   font-family: 'Roboto';
   font-size: 14px;

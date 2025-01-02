@@ -157,21 +157,21 @@ class VideoItemDetails extends Component {
                   onClick={this.handleLike}
                   $liked={status === 'like'}
                 >
-                  {status === 'like' ? 'liked' : 'not'}
+                  {status === 'like' ? 'liked' : 'not'} Like
                 </ButtonItem>
                 <ButtonItem
                   $darkTheme={darkTheme}
                   onClick={this.handleDislike}
                   $liked={status === 'dislike'}
                 >
-                  {status === 'dislike' ? 'disliked' : 'not'}
+                  {status === 'dislike' ? 'disliked' : 'not'} Dislike
                 </ButtonItem>
                 <ButtonItem
                   $darkTheme={darkTheme}
                   onClick={onHandleSave}
                   $liked={saved}
                 >
-                  <MdPlaylistAdd />
+                  <MdPlaylistAdd /> {saved ? 'Saved' : 'Save'}
                 </ButtonItem>
               </NumberContainer>
             </ResContainer>

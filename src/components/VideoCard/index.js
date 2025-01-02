@@ -29,9 +29,9 @@ const VideoCard = props => (
       return (
         <Link to={`/videos/${id}`}>
           <Card>
-            <ThumbnailImg alt="Thumbnail" src={thumbnailUrl} />
+            <ThumbnailImg alt="video thumbnail" src={thumbnailUrl} />
             <DetailsContainer>
-              <ChannelImg alt="channel" src={channel.profileImageUrl} />
+              <ChannelImg alt="channel logo" src={channel.profileImageUrl} />
               <ChannelDetails>
                 <Title $darkTheme={darkTheme}>{title}</Title>
                 <Details $darkTheme={darkTheme}>

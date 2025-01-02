@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const DataDisplayContainer = styled.div`
-  background-color: ${props => (props.$darkTheme ? '#000000' : '#f1f1f1')};
+  background-color: ${props => (props.$darkTheme ? '#181818' : '#f1f1f1')};
   display: flex;
   height: 90vh;
   @media screen and (max-width: 768px) {

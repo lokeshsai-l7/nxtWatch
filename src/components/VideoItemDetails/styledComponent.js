@@ -21,7 +21,7 @@ export const VideoPlayerContainer = styled.div`
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
   font-family: 'Roboto';
   color: ${props => (props.$darkTheme ? '#f1f1f1' : '#383838')};
   font-size: 20px;
@@ -46,7 +46,7 @@ export const DotContainer = styled.div`
 `
 
 export const ButtonItem = styled.button`
-  color: ${props => (props.$liked ? '#3b82f6' : '#606060')};
+  color: ${props => (props.$liked ? '#2563eb' : '#64748b')};
   background-color: transparent;
   font-size: 18px;
   border: none;

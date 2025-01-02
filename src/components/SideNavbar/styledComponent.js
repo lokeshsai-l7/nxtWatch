@@ -26,7 +26,7 @@ export const SocialMediaContainer = styled.div`
   color: ${props => (props.$darkTheme ? '#ffffff' : '#00306e')};
 `
 
-export const SideHeading = styled.h1`
+export const SideHeading = styled.p`
   font-family: 'Roboto';
   font-size: 20px;
 `
