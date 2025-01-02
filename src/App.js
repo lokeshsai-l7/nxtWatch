@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 
 import Login from './components/Login/index'
 import Layout from './components/Layout/index'
@@ -9,6 +9,8 @@ import Gaming from './components/Gaming/index'
 import Trending from './components/Trending/index'
 import VideoItemDetails from './components/VideoItemDetails/index'
 import SavedVideos from './components/SavedVideos/index'
+import ProtectedRoute from './components/ProtectedRoute/index'
+import NotFound from './components/NotFound/index'
 import './App.css'
 
 // Replace your code here
@@ -64,11 +66,21 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Layout>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/gaming" component={Gaming} />
-            <Route exact path="/trending" component={Trending} />
-            <Route exact path="/videos/:id" component={VideoItemDetails} />
-            <Route exact path="/savedvideos" component={SavedVideos} />
+            <ProtectedRoute exact path="/" component={Home} />
+            <ProtectedRoute exact path="/gaming" component={Gaming} />
+            <ProtectedRoute exact path="/trending" component={Trending} />
+            <ProtectedRoute
+              exact
+              path="/videos/:id"
+              component={VideoItemDetails}
+            />
+            <ProtectedRoute
+              exact
+              path="/saved-videos"
+              component={SavedVideos}
+            />
+            <Route exact path="/not-found" component={NotFound} />
+            <Redirect to="not-found" />
           </Layout>
         </Switch>
       </ThemeContext.Provider>
