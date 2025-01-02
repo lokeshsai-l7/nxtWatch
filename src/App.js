@@ -8,6 +8,7 @@ import ThemeContext from './context/ThemeContext'
 import Gaming from './components/Gaming/index'
 import Trending from './components/Trending/index'
 import VideoItemDetails from './components/VideoItemDetails/index'
+import SavedVideos from './components/SavedVideos/index'
 import './App.css'
 
 // Replace your code here
@@ -27,17 +28,28 @@ class App extends Component {
   }
 
   onClickSaveVideoButton = (newVideoObj, id) => {
-    this.setState(prevArray => {
-      const isAlreadySaved = prevArray.some(item => item.id === id)
+    console.log('called')
+    console.log(newVideoObj, id)
+    this.setState(prevState => {
+      const isAlreadySaved = prevState.savedVideosList.some(
+        item => item.id === id,
+      )
       if (isAlreadySaved) {
-        return {savedVideosList: prevArray.filter(item => item.id !== id)}
+        return {
+          savedVideosList: prevState.savedVideosList.filter(
+            item => item.id !== id,
+          ),
+        }
       }
-      return {savedVideosList: [...prevArray, newVideoObj]}
+      return {
+        savedVideosList: [...prevState.savedVideosList, newVideoObj],
+      }
     })
   }
 
   render() {
     const {savedVideosList, activeNavId, darkTheme} = this.state
+    console.log(savedVideosList)
     return (
       <ThemeContext.Provider
         value={{
@@ -55,7 +67,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/gaming" component={Gaming} />
             <Route exact path="/trending" component={Trending} />
-            <Route exact patch="/videos/:id" component={VideoItemDetails} />
+            <Route exact path="/videos/:id" component={VideoItemDetails} />
+            <Route exact path="/savedvideos" component={SavedVideos} />
           </Layout>
         </Switch>
       </ThemeContext.Provider>

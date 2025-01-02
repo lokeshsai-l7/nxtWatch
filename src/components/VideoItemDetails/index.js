@@ -122,6 +122,14 @@ class VideoItemDetails extends Component {
       {value => {
         const {darkTheme, onClickSaveVideoButton} = value
         const {videoItemDetailsData, status, saved} = this.state
+
+        const onHandleSave = () => {
+          const {match} = this.props
+          const {params} = match
+          const {id} = params
+          onClickSaveVideoButton(videoItemDetailsData, id)
+        }
+
         const {
           videoUrl = '',
           title = '',
@@ -131,12 +139,6 @@ class VideoItemDetails extends Component {
           description = '',
         } = videoItemDetailsData
 
-        const onHandleSave = () => {
-          const {match} = this.props
-          const {params} = match
-          const {id} = params
-          onClickSaveVideoButton(videoItemDetailsData, id)
-        }
         return (
           <PlayerContainer $darkTheme={darkTheme}>
             <VideoPlayerContainer>

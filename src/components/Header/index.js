@@ -83,7 +83,7 @@ const Header = props => (
         <NavBar $darkTheme={darkTheme}>
           <NavContainer>
             <NxtWatchLogo
-              alt="nxtwatch logo"
+              alt="website logo"
               src={
                 darkTheme
                   ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'

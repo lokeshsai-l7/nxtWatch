@@ -20,7 +20,7 @@ const FailureView = props => (
         onClickRetry()
       }
       const {
-        failedAlt = 'failed view',
+        failedAlt = 'failure view',
         darkThemeImgUrl = 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png',
         lightThemeImgUrl = 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png',
         heading = 'Oops! Something Went Wrong',
